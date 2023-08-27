@@ -8,7 +8,9 @@
     "dev": "npm run next:dev & npm run proxy",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate": "ts-node scripts/migrate.ts",
+    "script": "ts-node scripts/test.ts"
   },
   "dependencies": {
     "@storyblok/react": "^2.4.5",
@@ -21,6 +23,8 @@
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
+    "axios": "^1.5.0",
+    "dotenv": "^16.3.1",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "postcss": "8.4.28",
