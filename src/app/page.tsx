@@ -16,9 +16,8 @@ interface Props {
   blok: SbBlokData;
 }
 
-export default async function Home({ blok }: Props) {
+export default async function Home(props: Props) {
   const { data } = await fetchData();
-
   return (
     <div>
       <StoryblokStory story={data.story} />

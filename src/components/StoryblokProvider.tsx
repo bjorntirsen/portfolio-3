@@ -1,19 +1,21 @@
 'use client';
 import { storyblokInit, apiPlugin } from '@storyblok/react/rsc';
-import Page from './Page';
-import Teaser from './Teaser';
-import Feature from './Feature';
-import Grid from './Grid';
+import DefaultPage from './pages/DefaultPage';
+import Text from './embedded/Text';
+import Columns84Block from './blocks/Columns84Block';
+import AllProjectsBlock from './blocks/AllProjectsBlock';
+import Image from './embedded/Image';
 
 const components = {
-  feature: Feature,
-  grid: Grid,
-  teaser: Teaser,
-  page: Page
+  default_page: DefaultPage,
+  text: Text,
+  columns_8_4_block: Columns84Block,
+  all_projects_block: AllProjectsBlock,
+  image: Image
 };
 
 storyblokInit({
-  accessToken: 'your_preview_token',
+  accessToken: process.env.NEXT_PUBLIC_STORYBLOK_PREVIEW_TOKEN,
   use: [apiPlugin],
   components
 });
