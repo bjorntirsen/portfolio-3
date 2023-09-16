@@ -28,7 +28,9 @@ interface ApiData {
   };
 }
 
-async function fetchData(): Promise<Array<ApiData['data']['data'][0]> | []> {
+async function fetchProjects(): Promise<
+  Array<ApiData['data']['data'][0]> | []
+> {
   try {
     if (!process.env.PORTFOLIO_API_URL)
       throw new Error('Missing env variable PORTFOLIO_API_URL');
@@ -40,4 +42,4 @@ async function fetchData(): Promise<Array<ApiData['data']['data'][0]> | []> {
   }
 }
 
-export default fetchData;
+export default fetchProjects;

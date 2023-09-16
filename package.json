@@ -10,7 +10,8 @@
     "start": "next start",
     "lint": "next lint",
     "migrate": "ts-node scripts/migrate.ts",
-    "script": "ts-node scripts/test.ts"
+    "pull:components": "storyblok pull-components --space 247575",
+    "generate:types": "storyblok-generate-ts source=./components.247575.json target=./component-types-sb"
   },
   "dependencies": {
     "@storyblok/react": "^2.4.7",
@@ -30,6 +31,8 @@
     "postcss": "8.4.29",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.4",
+    "storyblok": "^3.25.2",
+    "storyblok-generate-ts": "^1.15.1",
     "tailwindcss": "3.3.3",
     "ts-node": "^10.9.1",
     "typescript": "5.2.2"
