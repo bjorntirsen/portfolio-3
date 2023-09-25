@@ -1,22 +1,17 @@
 import {
   ISbStoriesParams,
-  SbBlokData,
   StoryblokStory,
   getStoryblokApi
 } from '@storyblok/react/rsc';
 
-export async function fetchData() {
+async function fetchData() {
   let sbParams: ISbStoriesParams = { version: 'draft' };
   const storyblokApi = getStoryblokApi();
   const data = await storyblokApi.get(`cdn/stories/home`, sbParams);
   return data;
 }
 
-interface Props {
-  blok: SbBlokData;
-}
-
-export default async function Home(props: Props) {
+export default async function Home() {
   const { data } = await fetchData();
   return (
     <div>

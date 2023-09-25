@@ -25,17 +25,16 @@ interface Props {
 
 export default function Image({ blok }: Props) {
   const { alt, filename } = blok.image;
-  // return the image as a Next.js Image component
-  // make sure it is responsive
   return (
-    <NextImage
-      alt={alt}
-      src={filename}
-      layout="responsive"
-      width={1}
-      height={1}
-    />
+    <div className="relative h-full w-full">
+      <NextImage
+        priority
+        alt={alt}
+        src={filename}
+        width={250}
+        height={250}
+        className="m-auto"
+      />
+    </div>
   );
-
-  // return <NextImage alt={alt} src={filename} layout="fill" />;
 }

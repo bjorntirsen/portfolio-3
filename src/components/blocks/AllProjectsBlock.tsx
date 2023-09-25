@@ -1,19 +1,25 @@
 import { Project } from '@/types/StoryblokTypes';
+import { ISbStoriesParams, getStoryblokApi } from '@storyblok/react/rsc';
 import ProjectCard from '../ProjectCard';
 
-type Props = {
-  projects: Project[];
-};
+async function fetchProjects() {
+  let sbParams: ISbStoriesParams = {
+    version: 'draft',
+    content_type: 'project'
+  };
+  const storyblokApi = getStoryblokApi();
+  const data = await storyblokApi.get(`cdn/stories/`, sbParams);
+  return data;
+}
 
-export default function AllProjectsBlock({ projects }: Props) {
+export default async function AllProjectsBlock() {
+  const { data } = await fetchProjects();
   return (
     <>
       <p>Placeholder</p>
-      {projects
-        ? projects.map((project: Project) => (
-            <ProjectCard project={project} key={project.id} />
-          ))
-        : null}
+      {data.stories.map((project: Project) => (
+        <ProjectCard key={project.id} project={project} />
+      ))}
     </>
   );
 }
