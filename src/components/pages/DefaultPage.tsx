@@ -13,7 +13,10 @@ function Page({ blok }: Props) {
     <main className="mt-4 text-center" {...storyblokEditable(blok)}>
       {blok.content && Array.isArray(blok.content)
         ? blok.content.map((nestedBlok) => (
-            <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+            <>
+              <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+              <div className="h-4" />
+            </>
           ))
         : null}
     </main>

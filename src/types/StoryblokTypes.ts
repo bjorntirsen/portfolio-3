@@ -40,8 +40,8 @@ export interface Content {
   images: IImage[];
   siteLink: ILink;
   coverImage: IImage;
-  githubRepo: ILink;
-  gitlabRepo: ILink;
+  repo: string;
+  deploy: string;
 }
 
 export interface Project {

@@ -11,8 +11,11 @@ interface Props {
 export default function Columns84Block({ blok }: Props) {
   const { first_column, second_column } = blok;
   return (
-    <section className="grid grid-cols-12" {...storyblokEditable(blok)}>
-      <div className="col-span-12 sm:col-span-8">
+    <section
+      className="mx-auto grid max-w-6xl grid-cols-12 gap-4"
+      {...storyblokEditable(blok)}
+    >
+      <div className="col-span-12 m-auto sm:col-span-8">
         {first_column && Array.isArray(first_column)
           ? first_column.map((nestedBlok) => (
               <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
