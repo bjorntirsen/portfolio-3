@@ -1,4 +1,3 @@
-import axios from 'axios';
 import 'dotenv/config';
 
 export interface ProjectData {
@@ -34,8 +33,9 @@ async function fetchProjects(): Promise<
   try {
     if (!process.env.PORTFOLIO_API_URL)
       throw new Error('Missing env variable PORTFOLIO_API_URL');
-    const response = await axios.get<ApiData>(process.env.PORTFOLIO_API_URL);
-    return response.data.data.data;
+    const response = await fetch(process.env.PORTFOLIO_API_URL);
+    const data: ApiData = await response.json();
+    return data.data.data;
   } catch (error) {
     console.error('Error fetching data:', error);
     return [];
