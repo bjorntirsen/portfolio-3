@@ -26,14 +26,14 @@ interface Props {
 export default function Image({ blok }: Props) {
   const { alt, filename } = blok.image;
   return (
-    <div className="relative h-full w-full">
+    <div className="relative mb-4 h-full w-full">
       <NextImage
         priority
         alt={alt}
         src={filename}
         width={250}
         height={250}
-        className="m-auto"
+        className="m-auto h-auto w-full"
       />
     </div>
   );

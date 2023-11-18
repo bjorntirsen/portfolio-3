@@ -10,10 +10,10 @@ export default function Text({ blok }: Props) {
   const { element, text, size } = blok;
   switch (element) {
     case 'h1':
-      return <h1 className={`${size}`}>{text}</h1>;
+      return <h1 className={`${size} mb-4`}>{text}</h1>;
     case 'h2':
-      return <h2 className={`${size}`}>{text}</h2>;
+      return <h2 className={`${size} mb-4`}>{text}</h2>;
     default:
-      return <p className={`${size}`}>{text}</p>;
+      return <p className={`${size} mb-4`}>{text}</p>;
   }
 }

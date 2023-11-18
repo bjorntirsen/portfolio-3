@@ -13,9 +13,5 @@ async function fetchData() {
 
 export default async function Home() {
   const { data } = await fetchData();
-  return (
-    <div>
-      <StoryblokStory story={data.story} />
-    </div>
-  );
+  return <StoryblokStory story={data.story} />;
 }

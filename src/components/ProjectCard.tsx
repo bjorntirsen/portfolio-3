@@ -18,7 +18,6 @@ type Props = {
 } & CardProps;
 
 function ProjectCard({ className, ...props }: Props) {
-  console.log('props: ', props);
   const { name, content } = props.project;
   const { description, subtitle, repo, deploy, dateFirstCompleted } = content;
   const formattedDate = new Date(dateFirstCompleted).toLocaleDateString(
